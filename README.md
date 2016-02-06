@@ -1,28 +1,11 @@
-Cenobith RoR Starter Kit
-========================
+Cenobith Blog
+=============
 
 ## Overview
 
-This is skeleton for creating RoR Apps
+This is tiny CMS for my own Blog
 
-It contains basic Bootstrap layout and profile functionality
-
-Two languages localization - English and Russian
-
-* Ruby 2.2
-* Rails 4.2
-* Bootstrap 3
-* Devise
-* PaperClip
-* SimpleForm
-* RailsAdmin
-* Puma webserver
-
-## Initialization
-
-Change application title in config/application.rb
-
-Find and replace 'Starterkit' in all sources to your app name
+Based on Cenobith Starter Kit (https://github.com/Cenobith/starterkit)
 
 ## Database creation
 
