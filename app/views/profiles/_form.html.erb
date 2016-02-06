@@ -1,0 +1,15 @@
+<%= simple_form_for(@profile) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= f.input :nickname, label: t('nick') %>
+    <%= f.input :firstname, label: t('firstname') %>
+    <%= f.input :lastname, label: t('lastname') %>
+    <%= f.input :country, label: t('country') %>
+
+    <%= userpic_for(current_user) %>
+
+    <%= f.label t('image'), class: "control-label" %>
+    <%= f.file_field :userpic, class: "form-control" %>
+    <%= f.input :use_gravatar, as: :boolean, label: t('use')+" Gravatar" %>
+
+    <%= f.submit t('save_changes'), class: "btn btn-large btn-primary", id: "SaveBtn" %>
+<% end %>
