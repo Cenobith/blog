@@ -1,3 +1,4 @@
+<p>
 <div class="row">
   <%= link_to post.title, post_path(post.id), class: "h3" %>
   <% if signed_in? %>
@@ -16,3 +17,4 @@
 <div class="row">
   <%= post.content.html_safe %>
 </div>
+</p>

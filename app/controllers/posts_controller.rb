@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  befire_filter :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_post, only: [:edit, :update, :destroy, :show]
 
   def index
