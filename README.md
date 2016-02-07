@@ -9,6 +9,7 @@ Based on Cenobith Starter Kit (https://github.com/Cenobith/starterkit)
 
 Features:
 
+* Pages - shows dynamic menu items to custom pages
 * Widgets - shows HTML or images or images with links
 
 ## Database creation
