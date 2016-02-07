@@ -23,7 +23,22 @@
     <div class="col-md-3">
       <div class="panel panel-default">
         <div class="panel-body center">
-          Basic panel example
+          <% $widgets.order(:order).each do |widget| %>
+            <p>
+            <% if widget.show_pic == true %>
+              <% if !widget.link.nil? %>
+                 <a href="<%= widget.link %>">
+              <% end %>
+              <%= image_tag(widget.image.url, width: widget.width) %>
+                  <% if !widget.link.nil? %>
+                      </a>
+                  <% end %>
+
+            <% else %>
+              <%= widget.content.html_safe %>
+            <% end %>
+            </p>
+          <% end %>
         </div>
       </div>
     </div>

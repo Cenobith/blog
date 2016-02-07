@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
 
   def load_pages
     $pages = Page.all
+    $widgets = Widget.all
   end
 
   def after_sign_in_path_for(resource_or_scope)
