@@ -6,6 +6,7 @@
     <div class="row">
       <%= f.input :content, as: :wysihtml5 %>
     </div>
+    <%= f.input :published, as: :boolean, label: "Publish" %>
     <div class="modal-footer">
       <%= button_to "Cancel", :back, class: "btn btn-default" %>
       <%= f.button :submit, "Save", class: "btn btn-primary" %>

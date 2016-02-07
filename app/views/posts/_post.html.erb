@@ -1,5 +1,8 @@
 <p>
 <div class="row">
+  <% if !post.published %>
+  <i class="glyphicon glyphicon-lock"></i>
+  <% end %>
   <%= link_to post.title, post_path(post.id), class: "h3" %>
   <% if signed_in? %>
     <%= link_to edit_post_path(post.id), class: "btn" do %>

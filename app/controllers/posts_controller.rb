@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy, :show]
 
   def index
-    @posts = current_user.posts.order(:created_at).paginate(page: params[:page])
+    @posts = current_user.posts.order!(:created_at).paginate(page: params[:page])
   end
 
   def create
@@ -43,6 +43,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :published)
   end
 end
