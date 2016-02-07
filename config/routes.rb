@@ -4,9 +4,13 @@ Rails.application.routes.draw do
   devise_for :users
   resources :profiles
   resources :pages
+  resources :posts
 
   get 'profiles/new'
   post 'profiles/new'
+
+  get 'posts/new'
+  post 'posts/new'
 
   get 'static_pages/home'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,18 @@
+<div class="row">
+  <%= link_to post.title, post_path(post.id), class: "h3" %>
+  <% if signed_in? %>
+    <%= link_to edit_post_path(post.id), class: "btn" do %>
+      <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to post, method: :delete,
+        data: { confirm: "You sure?" },
+        title: post.title,
+        class: "btn" do %>
+       <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+    <% end %>
+  <% end %>
+  <h6>Posted on <%= post.created_at %> by <%= Profile.find_by_user_id(post.user_id).nickname %></h6>
+</div>
+<div class="row">
+  <%= post.content.html_safe %>
+</div>
