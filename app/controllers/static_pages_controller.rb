@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    @posts = Post.all.paginate(page: params[:page])
+    @posts = Post.all.order(:created_at).paginate(page: params[:page])
   end
 end

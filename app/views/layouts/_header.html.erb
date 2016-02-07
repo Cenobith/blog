@@ -28,6 +28,7 @@
                   <% if !current_user.profile.nil? %>
                       <li><%= link_to t('profile'), edit_profile_path(current_user.profile.id), id: "EditProfile" %></li>
                   <% end %>
+                  <li><%= link_to "My Posts", posts_path %></li>
                   <% if current_user.admin? %>
                       <li><%= link_to t('admin_panel'), rails_admin_path %></li>
                   <% end %>
