@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @posts = current_user.posts.order("created_at DESC").paginate(page: params[:page])
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post created"
@@ -34,6 +35,23 @@ class PostsController < ApplicationController
   def update
     @post.update(post_params)
     redirect_to post_path(@post.id)
+  end
+
+  def search
+    if signed_in?
+      @posts = Post.where("upper(title) LIKE ? or upper(content) LIKE ?", "%"+params[:q].upcase+"%", "%"+params[:q].upcase+"%")
+                   .order("created_at DESC")
+                   .paginate(page: params[:page])
+    else
+      @posts = Post.where(published: true)
+                   .where("upper(title) LIKE ? or upper(content) LIKE ?", "%"+params[:q].upcase+"%", "%"+params[:q].upcase+"%")
+                   .order("created_at DESC")
+                   .paginate(page: params[:page])
+    end
+    if @posts.count == 0
+      flash[:warning] = "Nothing found"
+    end
+    render 'posts/index'
   end
 
   private

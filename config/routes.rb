@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :profiles
   resources :pages
-  resources :posts
+  resources :posts do
+    collection do
+      get 'search'
+    end
+  end
 
   get 'profiles/new'
   post 'profiles/new'

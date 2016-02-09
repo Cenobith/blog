@@ -8,7 +8,7 @@
     </div>
     <%= f.input :published, as: :boolean, label: "Publish" %>
     <div class="modal-footer">
-      <%= button_to "Cancel", :back, class: "btn btn-default" %>
+      <%= button_to "Cancel", root_path, type: :reset, class: "btn btn-default" %>
       <%= f.button :submit, "Save", class: "btn btn-primary" %>
     </div>
   </div>
