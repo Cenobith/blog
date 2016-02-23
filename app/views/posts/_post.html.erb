@@ -20,4 +20,30 @@
 <div class="row">
   <%= post.content.html_safe %>
 </div>
+<div class="row">
+  <h5>
+  Comments: <%= link_to post.comments.count, post_path(post.id, anchor: "comments") %> |
+  <a role="button" data-toggle="collapse" href="#collapseForm<%= post.id %>" aria-expanded="false" aria-controls="collapseForm<%= post.id %>">
+    Add comment
+  </a></h5>
+  <div class="collapse" id="collapseForm<%= post.id %>">
+    <div class="panel panel-default">
+      <%= simple_form_for([post, post.comments.build] , html: { class: 'form-horizontal' }) do |f| %>
+
+          <div class="panel-body" style="margin: 10px 10px 10px 10px;">
+            <% if !signed_in? %>
+                <%= f.input :nickname %>
+            <% end %>
+            <%= f.input :content %>
+          </div>
+          <div class="panel-footer">
+            <%= f.button :submit, "Add comment", class: "btn btn-primary" %>
+            <a role="button" data-toggle="collapse" href="#collapseForm<%= post.id %>" aria-expanded="false" aria-controls="collapseForm<%= post.id %>">
+              Cancel
+            </a>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 </p>

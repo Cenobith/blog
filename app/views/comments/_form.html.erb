@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+<%= simple_form_for(@comment, html: { class: 'form-horizontal' }) do |f| %>
+
+      <div class="panel-body">
+      <% if !signed_in? %>
+          <%= f.input :nickname %>
+      <% end %>
+        <%= f.input :content %>
+      </div>
+      <div class="panel-footer">
+        <button type="button" class="btn btn-default" data-dismiss="collapse">Cancel</button>
+        <%= f.button :submit, "Add comment", comments_create_comments_path(post_id), class: "btn btn-primary" %>
+      </div>
+
+<% end %>
+</div>
+

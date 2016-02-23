@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   resources :profiles
   resources :pages
   resources :posts do
+    resources :comments
     collection do
       get 'search'
     end
   end
+  #resources :comments do
+  #  collection do
+  #    get 'comments/create'
+  #    post 'comments/create'
+  #  end
+  #end
 
   get 'profiles/new'
   post 'profiles/new'
