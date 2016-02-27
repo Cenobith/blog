@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-header">
         <div class="navbar-brand">
-          <%= link_to Blog::Application.config.title, root_path, id: "logo" %>
+          <%= link_to image_tag('logo_small.png', class: "img-rounded"), root_path, id: "logo" %>
         </div>
       </div>
       <nav>
@@ -14,6 +14,10 @@
                 <%= t('home') %>
                 <% end %>
                 </li>
+          <li><a href="#">
+            <i class="glyphicon glyphicon-book"></i>
+            Blog
+          </a></li>
           <% $pages.each do |page| %>
             <li><%= link_to page.title, page_path(page.id) %></li>
           <% end %>
@@ -59,7 +63,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Search</h4>
+        <h4 class="modal-title" id="myModalLabel">Search in posts</h4>
       </div>
       <%= form_tag search_posts_path, method: "get" do %>
       <div class="modal-body">
