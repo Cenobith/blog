@@ -5,7 +5,7 @@
       <% if !signed_in? %>
           <%= f.input :nickname %>
       <% end %>
-        <%= f.input :content %>
+        <%= f.input :content, label: "Comment" %>
       </div>
       <div class="panel-footer">
         <button type="button" class="btn btn-default" data-dismiss="collapse">Cancel</button>

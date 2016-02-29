@@ -1,6 +1,6 @@
 <%= will_paginate @posts %>
 
-<%= render @posts %>
+<%= render partial: "posts/post", collection: @posts, locals: { is_index: 1 } %>
 
 <%= will_paginate @posts %>
 

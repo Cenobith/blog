@@ -1,4 +1,4 @@
-<%= render @post %>
+<%= render partial: "post", object: @post, locals: { is_index: 0 } %>
 <a id="comments"></a>
 <% if @post.comments.count > 0 %>
     <h4>Comments:</h4>
