@@ -1,8 +1,9 @@
 <p>
 <div class="col-md-12">
 <div class="row">
-<h5><%= comment.nickname %></h5>
-<h6><%= comment.created_at %></h6>
+<h5><i class="glyphicon glyphicon-user" aria-hidden="true"></i><%= comment.nickname %>
+  <i class="glyphicon glyphicon-calendar" aria-hidden="true"></i><%= comment.created_at %>
+</h5>
 </div>
 <div class="row">
   <%= comment.content %>

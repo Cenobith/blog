@@ -27,6 +27,7 @@
         <%= post.content.html_safe %>
     <% end %>
   </div>
+  <% if is_index==1 %>
   <div class="panel-footer">
   <h5><i class="glyphicon glyphicon-comment" aria-hidden="true"></i>
   Comments: <%= link_to post.comments.count, post_path(post.id, anchor: "comments") %> |
@@ -53,5 +54,6 @@
     </div>
   </div>
   </div>
+  <% end %>
 </div>
 </p>
