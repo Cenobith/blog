@@ -24,6 +24,6 @@ module Blog
     config.active_record.raise_in_transactional_callbacks = true
 
     # Application title, change it
-    config.title = 'Notes about Software Development'
+    config.title = 'MyDevNotes'
   end
 end
