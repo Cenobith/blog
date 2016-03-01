@@ -301,3 +301,27 @@ div.btn-group{
   display: inline;
 }
 
+.post.title {
+  display:inline-block;
+  position:relative;
+}
+
+.post.title span {
+  display:inline-block;
+  position:absolute;
+  top:30px;
+  left:0px;
+
+  /* Оформление текста */
+  color:#FFF;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:20px;
+
+  /* Фон */
+  background-color:rgba(0,0,0,.4);
+  padding:10px 30px;
+}
+
+.panel{
+  padding: 0px;
+}

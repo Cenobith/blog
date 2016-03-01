@@ -1,22 +1,37 @@
 <p>
 <div class="panel panel-default">
-  <div class="panel-heading">
-  <% if !post.published %>
+  <div class="panel-heading clearfix" style="padding: 0px 0px 0px 0px">
+  <% if post.title_image.exists? %>
+    <div class="post title">
+  <% else %>
+    <div class="h3">
+  <% end %>
+  <% if post.title_image.exists? %>
+     <%= link_to image_tag(post.title_image.url, class: "img-responsive"), post_path(post.id) %>
+  <% end %>
+  <span>  <% if !post.published %>
   <i class="glyphicon glyphicon-lock"></i>
+        <% end %><%= link_to post.title, post_path(post.id), class: "h3" %></span>
+  <% if post.title_image.exists? %>
+     </div>
+  <% else %>
+     </div>
   <% end %>
-  <%= link_to post.title, post_path(post.id), class: "h3" %>
-  <% if signed_in? %>
-    <%= link_to edit_post_path(post.id), class: "btn" do %>
-      <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>
+  <div class="timeline">
+  <h6><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i><%= post.created_at %>  <i class="glyphicon glyphicon-user" aria-hidden="true"></i><%= Profile.find_by_user_id(post.user_id).nickname %>
+    <% if signed_in? %>
+        <%= link_to edit_post_path(post.id), class: "btn" do %>
+            <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to post, method: :delete,
+                    data: { confirm: "You sure?" },
+                    title: post.title,
+                    class: "btn" do %>
+            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+        <% end %>
     <% end %>
-    <%= link_to post, method: :delete,
-        data: { confirm: "You sure?" },
-        title: post.title,
-        class: "btn" do %>
-       <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
-    <% end %>
-  <% end %>
-  <h6><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i><%= post.created_at %>  <i class="glyphicon glyphicon-user" aria-hidden="true"></i><%= Profile.find_by_user_id(post.user_id).nickname %></h6>
+  </h6>
+  </div>
   </div>
   <div class="panel-body">
     <% if is_index==1 %>

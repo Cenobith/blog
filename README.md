@@ -16,6 +16,11 @@ Features:
 
 Change database name in database.yml and run: rake db:create db.migrate
 
+## Configuration
+
+* Change application name (config.title) in config/application.rb 
+* Change logo pictures (logo.png, logo_small.png) in app/assets/images
+
 
 
 

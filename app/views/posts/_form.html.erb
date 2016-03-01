@@ -4,6 +4,15 @@
       <%= f.input :title %>
     </div>
     <div class="row">
+      <div class="form-group">
+        <% if @post.title_image.exists? %>
+            <%= image_tag @post.title_image.url, size: "200", class: "img-rounded" %><br>
+        <% end %>
+        <%= f.label "Title image", class: "control-label" %>
+        <%= f.file_field :title_image, class: "form-control" %>
+      </div>
+    </div>
+    <div class="row">
       <%= f.input :content, as: :wysihtml5 %>
     </div>
     <%= f.input :published, as: :boolean, label: "Publish" %>
