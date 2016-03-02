@@ -21,6 +21,8 @@ Change database name in database.yml and run: rake db:create db.migrate
 * Change application name (config.title) in config/application.rb 
 * Change logo pictures (logo.png, logo_small.png) in app/assets/images
 
+Sign up for new users is disabled. For enable it uncomment 'registerable' in app/models/user.rb 
+
 
 
 
