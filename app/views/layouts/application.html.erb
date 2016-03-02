@@ -23,7 +23,7 @@
     <div class="col-md-3">
       <div class="panel panel-default">
         <div class="panel-body center">
-          <% $widgets.order(:order).each do |widget| %>
+          <% $widgets.each do |widget| %>
             <p>
             <% if widget.show_pic == true %>
               <% if !widget.link.nil? %>

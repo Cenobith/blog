@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
   end
 
   def load_pages
-    $pages = Page.all
-    $widgets = Widget.all
+    $pages = Page.where(enabled: true)
+    $widgets = Widget.where(enabled: true).order(:order)
   end
 
   def after_sign_in_path_for(resource_or_scope)
