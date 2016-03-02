@@ -19,6 +19,7 @@
 # Ignore IDEA/RubyMine configs
 /.idea
 /.idea/*
+/public/system
 
 .secret
 .project
