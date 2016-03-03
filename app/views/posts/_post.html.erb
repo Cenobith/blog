@@ -35,10 +35,9 @@
   </div>
   <div class="panel-body">
     <% if is_index==1 %>
-      <%= truncate(post.content, length: 100, separator: ' ').html_safe %>
+      <%= truncate(post.content, length: 300, separator: ' ').html_safe %>
       <%= link_to "read full article", post_path(post.id) %>
     <% else %>
-        It's post show
         <%= post.content.html_safe %>
     <% end %>
   </div>
