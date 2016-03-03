@@ -1,3 +1,6 @@
+<% if @posts.count == 0 %>
+    <h2>No posts yet</h2>
+<% end %>
 <%= will_paginate @posts %>
 
 <%= render partial: "posts/post", collection: @posts, locals: { is_index: 1 } %>
