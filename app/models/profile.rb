@@ -7,7 +7,9 @@ class Profile < ActiveRecord::Base
   validates :country, length: {maximum: 50}
   validates :user_id, presence: true
 
-  has_attached_file :userpic
+  has_attached_file :userpic,
+                    url: "/assets/users/:id/:style/:basename.:extension",
+                    path: ":rails_root/public/assets/users/:id/:style/:basename.:extension"
   validates_attachment :userpic, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
 end
