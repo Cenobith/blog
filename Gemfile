@@ -44,6 +44,7 @@ gem 'rails_admin'
 gem 'pg'
 gem 'puma'
 gem 'bootstrap-wysihtml5-rails'
+gem 'aws-sdk', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
