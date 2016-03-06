@@ -27,7 +27,3 @@ test:
   <<: *local
   database: blog_test
 
-# You can delete this if you will deploy your app to Heroku
-production:
-  <<: *local
-  database: blog
