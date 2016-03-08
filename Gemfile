@@ -44,7 +44,6 @@ gem 'rails_admin'
 gem 'pg'
 gem 'puma'
 gem 'bootstrap-wysihtml5-rails'
-gem 'aws-sdk', '< 2.0', group: :production
 gem 'acts-as-taggable-on'
 
 group :development, :test do
@@ -69,3 +68,7 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'aws-sdk', '< 2.0'
+  gem 'rails_stdout_logging'
+end
