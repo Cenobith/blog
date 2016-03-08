@@ -38,7 +38,7 @@
   </div>
   <div class="panel-body">
     <% if is_index==1 %>
-      <%= truncate(post.content, length: 300, separator: ' ').html_safe %>
+      <%= truncate(strip_tags(post.content), length: 300, separator: ' ') %>
       <%= link_to "read full article", post_path(post.id) %>
     <% else %>
         <%= post.content.html_safe %>
