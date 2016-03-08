@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, length: {maximum: 250}
   validates :user_id, presence: true
 
-  has_attached_file :title_image
+  has_attached_file :title_image, styles: { medium: "600x600>", thumb: "100x100>", large: "1000x1000>" }
   validates_attachment :title_image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
   acts_as_taggable

@@ -7,7 +7,7 @@ class Profile < ActiveRecord::Base
   validates :country, length: {maximum: 50}
   validates :user_id, presence: true
 
-  has_attached_file :userpic
+  has_attached_file :userpic, styles: { medium: "600x600>", normal: "100x100>", small: "20x20>" }
   validates_attachment :userpic, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
 end

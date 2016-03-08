@@ -7,7 +7,7 @@
     <div class="h3" style="margin-left: 15px">
   <% end %>
   <% if post.title_image.exists? %>
-     <%= link_to image_tag(post.title_image.url, class: "img-responsive"), post_path(post.id) %>
+     <%= link_to image_tag(post.title_image.url(:large), class: "img-responsive"), post_path(post.id) %>
   <% end %>
   <span>  <% if !post.published %>
   <i class="glyphicon glyphicon-lock"></i>

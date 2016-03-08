@@ -6,7 +6,7 @@
     <div class="row">
       <div class="form-group">
         <% if @post.title_image.exists? %>
-            <%= image_tag @post.title_image.url, class: "img-rounded" %><br>
+            <%= image_tag @post.title_image.url(:medium), class: "img-rounded" %><br>
         <% end %>
         <%= f.label "Title image", class: "control-label" %>
         <%= f.file_field :title_image, class: "form-control" %>

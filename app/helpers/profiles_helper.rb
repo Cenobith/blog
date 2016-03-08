@@ -8,7 +8,7 @@ module ProfilesHelper
         image_tag(gravatar_url, alt: user.profile.nickname, class: "gravatar img-rounded")
       else
         size = options[:size]
-        image_tag(user.profile.userpic.url, alt: user.profile.nickname, height: size, width: size, class: "gravatar img-rounded img-responsive")
+        image_tag(user.profile.userpic.url(:normal), alt: user.profile.nickname, height: size, width: size, class: "gravatar img-rounded img-responsive")
       end
     end
 

@@ -13,7 +13,7 @@
               <% if !widget.link.nil? %>
                   <a href="<%= widget.link %>">
               <% end %>
-              <%= image_tag(widget.image.url, width: widget.width) %>
+              <%= image_tag(widget.image.url(:normal), width: widget.width) %>
               <% if !widget.link.nil? %>
                   </a>
               <% end %>
