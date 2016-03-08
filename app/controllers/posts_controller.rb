@@ -4,9 +4,9 @@ class PostsController < ApplicationController
 
   def index
     if signed_in?
-      @posts = current_user.posts.order!(:created_at)
+      @posts = current_user.posts.order!(:published_at)
     else
-      @posts = Post.where(published: true).order("created_at DESC")
+      @posts = Post.where(published: true).order("published_at DESC")
     end
     if params[:tag]
       @posts = @posts.tagged_with(params[:tag])
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @posts = current_user.posts.order("created_at DESC").paginate(page: params[:page])
+    @posts = current_user.posts.order("published_at DESC").paginate(page: params[:page])
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post created"
@@ -48,12 +48,12 @@ class PostsController < ApplicationController
   def search
     if signed_in?
       @posts = Post.where("upper(title) LIKE ? or upper(content) LIKE ?", "%"+params[:q].upcase+"%", "%"+params[:q].upcase+"%")
-                   .order("created_at DESC")
+                   .order("published_at DESC")
                    .paginate(page: params[:page])
     else
       @posts = Post.where(published: true)
                    .where("upper(title) LIKE ? or upper(content) LIKE ?", "%"+params[:q].upcase+"%", "%"+params[:q].upcase+"%")
-                   .order("created_at DESC")
+                   .order("published_at DESC")
                    .paginate(page: params[:page])
     end
     if @posts.count == 0
@@ -69,6 +69,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :published, :title_image, :tag_list)
+    params.require(:post).permit(:title, :content, :published, :title_image, :tag_list, :published_at)
   end
 end

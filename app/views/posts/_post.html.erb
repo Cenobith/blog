@@ -18,7 +18,7 @@
      </div>
   <% end %>
   <div class="timeline">
-  <h6><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i><%= post.created_at %>  <i class="glyphicon glyphicon-user" aria-hidden="true"></i><%= Profile.find_by_user_id(post.user_id).nickname %>
+  <h6><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i><%= post.published_at %>  <i class="glyphicon glyphicon-user" aria-hidden="true"></i><%= Profile.find_by_user_id(post.user_id).nickname %>
     <% if signed_in? %>
         <%= link_to edit_post_path(post.id), class: "btn" do %>
             <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>
