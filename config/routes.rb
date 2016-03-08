@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   #  end
   #end
 
+  get 'tags/:tag', to: 'posts#index', as: :tag
+
   get 'profiles/new'
   post 'profiles/new'
 

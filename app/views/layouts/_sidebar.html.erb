@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div id="tag_cloud">
+      <i class="glyphicon glyphicon-tags" aria-hidden="true"></i>
+      <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
+    </div>
+    <div class="center">
+    <% $widgets.each do |widget| %>
+        <p>
+          <% if widget.show_pic == true %>
+              <% if !widget.link.nil? %>
+                  <a href="<%= widget.link %>">
+              <% end %>
+              <%= image_tag(widget.image.url, width: widget.width) %>
+              <% if !widget.link.nil? %>
+                  </a>
+              <% end %>
+
+          <% else %>
+              <%= widget.content.html_safe %>
+          <% end %>
+        </p>
+    <% end %>
+    </div>
+  </div>
+</div>

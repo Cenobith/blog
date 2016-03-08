@@ -21,26 +21,7 @@
     <%= yield %>
     </div>
     <div class="col-md-3">
-      <div class="panel panel-default">
-        <div class="panel-body center">
-          <% $widgets.each do |widget| %>
-            <p>
-            <% if widget.show_pic == true %>
-              <% if !widget.link.nil? %>
-                 <a href="<%= widget.link %>">
-              <% end %>
-              <%= image_tag(widget.image.url, width: widget.width) %>
-                  <% if !widget.link.nil? %>
-                      </a>
-                  <% end %>
-
-            <% else %>
-              <%= widget.content.html_safe %>
-            <% end %>
-            </p>
-          <% end %>
-        </div>
-      </div>
+      <%= render 'layouts/sidebar' %>
     </div>
   </div>
 </div>

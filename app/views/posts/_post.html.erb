@@ -31,6 +31,9 @@
         <% end %>
     <% end %>
   </h6>
+    <h6><i class="glyphicon glyphicon-tags" aria-hidden="true"></i>
+      <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+    </h6>
   </div>
   </div>
   <div class="panel-body">

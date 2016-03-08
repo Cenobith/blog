@@ -8,5 +8,6 @@ class Post < ActiveRecord::Base
   has_attached_file :title_image
   validates_attachment :title_image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
+  acts_as_taggable
 
 end

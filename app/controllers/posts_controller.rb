@@ -4,10 +4,14 @@ class PostsController < ApplicationController
 
   def index
     if signed_in?
-      @posts = current_user.posts.order!(:created_at).paginate(page: params[:page])
+      @posts = current_user.posts.order!(:created_at)
     else
-      @posts = Post.where(published: true).order("created_at DESC").paginate(page: params[:page])
+      @posts = Post.where(published: true).order("created_at DESC")
     end
+    if params[:tag]
+      @posts = @posts.tagged_with(params[:tag])
+    end
+    @posts = @posts.paginate(page: params[:page])
   end
 
   def create
@@ -65,6 +69,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :published, :title_image)
+    params.require(:post).permit(:title, :content, :published, :title_image, :tag_list)
   end
 end

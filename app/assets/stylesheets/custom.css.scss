@@ -325,3 +325,12 @@ div.btn-group{
 .panel{
   padding: 0px;
 }
+
+#tag_cloud {
+  width: 160px;
+  line-height: 1.6em;
+  padding-bottom: 15px;
+  .s { style: h6 }
+  .m { style: h5 }
+  .l { style: h4 }
+}
