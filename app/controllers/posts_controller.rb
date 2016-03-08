@@ -65,7 +65,14 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find(params[:id])
+    if signed_in?
+      @post = Post.find(params[:id])
+    else
+      @post = Post.where(published: true).find(params[:id])
+    end
+  rescue ActiveRecord::RecordNotFound
+    flash[:warning] = "Nothing found"
+    redirect_to root_path
   end
 
   def post_params
