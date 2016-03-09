@@ -6,6 +6,7 @@ Cenobith Blog
 This is tiny CMS for my own Blog
 
 Based on Cenobith Starter Kit (https://github.com/Cenobith/starterkit)
+Deployed as my blog - http://amikhaylin.herokuapp.com/
 
 Features:
 
@@ -20,6 +21,7 @@ Change database name in database.yml and run: rake db:create db.migrate
 
 * Change application name (config.title) in config/application.rb 
 * Change logo pictures (logo.png, logo_small.png) in app/assets/images
+* Set 'gmail_username' and 'gmail_password' environment variables for deliver comment notifications over Gmail
 
 Sign up for new users is disabled. For enable it uncomment 'registerable' in app/models/user.rb 
 

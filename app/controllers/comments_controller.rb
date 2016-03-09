@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
     end
     if @comment.save
       flash[:success] = "Comment created"
+      Notifier.commented(@comment).deliver
       redirect_to post_path(@comment.post_id)
     else
       render 'static_pages/home'

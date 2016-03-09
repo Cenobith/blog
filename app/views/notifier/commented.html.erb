@@ -1,0 +1,6 @@
+<h4>Your post <q><%= @comment.post.title %></q> was commented by <%= @comment.nickname %> at <%= @comment.created_at %></h4>
+<p>
+<%= @comment.content %>
+</p>
+
+<%= post_url(@comment.post) %>
