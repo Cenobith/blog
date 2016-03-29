@@ -45,6 +45,8 @@ gem 'pg'
 gem 'puma'
 gem 'bootstrap-wysihtml5-rails'
 gem 'acts-as-taggable-on'
+gem 'paperclip-ffmpeg', '~> 1.0.1'
+gem 'haml'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

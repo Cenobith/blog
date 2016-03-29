@@ -32,6 +32,7 @@
                       <li><%= link_to t('profile'), edit_profile_path(current_user.profile.id), id: "EditProfile" %></li>
                   <% end %>
                   <li><%= link_to "My Posts", posts_path %></li>
+                  <li><%= link_to "My Media Files", media_files_path %></li>
                   <% if current_user.admin? %>
                       <li><%= link_to t('admin_panel'), rails_admin_path %></li>
                   <% end %>

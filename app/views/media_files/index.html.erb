@@ -1,0 +1,9 @@
+<%= link_to new_media_file_path, class: "btn" do %>
+    <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>Add new
+<% end %>
+
+<%= will_paginate @files %>
+
+<%= render partial: "media_files/media_file", collection: @files %>
+
+<%= will_paginate @files %>

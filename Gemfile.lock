@@ -149,6 +149,8 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    paperclip-ffmpeg (1.0.1)
+      paperclip (>= 2.5.2)
     pg (0.18.4)
     puma (2.16.0)
     rack (1.6.4)
@@ -285,9 +287,11 @@ DEPENDENCIES
   devise-i18n
   factory_girl_rails
   faker!
+  haml
   jbuilder (~> 2.0)
   jquery-rails
   paperclip
+  paperclip-ffmpeg (~> 1.0.1)
   pg
   puma
   rails (= 4.2.5)

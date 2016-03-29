@@ -8,3 +8,9 @@
 i {
   padding-right: 5px;
 }
+
+iframe {
+  &.wysihtml5-sandbox {
+    resize: vertical;
+  }
+}

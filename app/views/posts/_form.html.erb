@@ -25,7 +25,7 @@
         <%= f.input :published_at, as: :datetime, input_html: {value: Time.now} %>
     </div>
     <div class="modal-footer">
-      <%= button_to "Cancel", root_path, type: :reset, class: "btn btn-default" %>
+      <%= link_to "Cancel", posts_path, type: :reset, class: "btn btn-default" %>
       <%= f.button :submit, "Save", class: "btn btn-primary" %>
     </div>
   </div>

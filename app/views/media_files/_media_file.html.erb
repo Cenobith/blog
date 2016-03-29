@@ -1,0 +1,42 @@
+<p>
+  <div class="row">
+    <div class="col-md-1">
+      <%= link_to media_file.attachment.url do %>
+        <%= media_file.name %>
+      <% end %>
+    </div>
+    <div class="col-md-1">
+      <% if media_file.is_image? %>
+        <%= image_tag media_file.attachment.url(:small), class: "img-responsive" %>
+      <% end %>
+      <% if media_file.is_video? %>
+        <%= video_tag media_file.attachment.url(:thumbnail) %>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+         Original: <%= get_host(media_file.attachment.url) %>
+      </div>
+      <div class="row">
+        Small: <%= get_host(media_file.attachment.url(:small)) %>
+      </div>
+      <div class="row">
+        Medium: <%= get_host(media_file.attachment.url(:medium)) %>
+      </div>
+      <div class="row">
+        Large: <%= get_host(media_file.attachment.url(:large)) %>
+      </div>
+    </div>
+    <% if signed_in? %>
+        <%= link_to edit_media_file_path(media_file.id), class: "btn" do %>
+            <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to media_file, method: :delete,
+                    data: { confirm: "You sure?" },
+                    title: media_file.name,
+                    class: "btn" do %>
+            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+        <% end %>
+    <% end %>
+  </div>
+</p>

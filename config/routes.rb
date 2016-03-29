@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :media_files
   #resources :comments do
   #  collection do
   #    get 'comments/create'
@@ -23,6 +24,9 @@ Rails.application.routes.draw do
 
   get 'posts/new'
   post 'posts/new'
+
+  get 'media_files/new'
+  post 'media_files/new'
 
   get 'static_pages/home'
   # The priority is based upon order of creation: first created -> highest priority.

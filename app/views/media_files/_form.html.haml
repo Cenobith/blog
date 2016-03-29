@@ -1,0 +1,17 @@
+= simple_form_for(@file, html: { class: 'form-horizontal' }) do |f|
+  .jumbotron
+    .row
+      = f.input :name
+    .row
+      .form-group
+        - if @file.attachment.exists?
+          - if @file.is_image?
+            = image_tag @file.attachment.url(:medium), class: "img-rounded"
+          - if @file.is_video?
+            = video_tag @file.attachment.url(:thumbnail)
+          %br
+        = f.label "File", class: "control-label"
+        = f.file_field :attachment, class: "form-control"
+    .modal-footer
+      = link_to "Cancel", media_files_path, type: :reset, class: "btn btn-default"
+      = f.button :submit, "Save", class: "btn btn-primary"
