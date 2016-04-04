@@ -60,6 +60,7 @@
           <div class="panel-body" style="margin: 10px 10px 10px 10px;">
             <% if !signed_in? %>
                 <%= f.input :nickname %>
+                <%= f.input :email %>
             <% end %>
             <%= f.input :content, label: "Comment" %>
           </div>

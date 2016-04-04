@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     if signed_in?
       @comment.nickname = nickname_for(current_user)
+      @comment.email = current_user.email
     end
     if @comment.save
       flash[:success] = "Comment created"
@@ -28,6 +29,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:post_id, :nickname, :content)
+    params.require(:comment).permit(:post_id, :nickname, :content, :email)
   end
 end

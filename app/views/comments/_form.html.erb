@@ -4,6 +4,7 @@
       <div class="panel-body">
       <% if !signed_in? %>
           <%= f.input :nickname %>
+          <%= f.input :email %>
       <% end %>
         <%= f.input :content, label: "Comment" %>
       </div>

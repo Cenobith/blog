@@ -1,9 +1,9 @@
-Cenobith Blog
-=============
+Increment Blog
+==============
 
 ## Overview
 
-This is tiny CMS for my own Blog
+This is platform for my own Blog
 
 Based on Cenobith Starter Kit (https://github.com/Cenobith/starterkit)
 Deployed as my blog - http://amikhaylin.herokuapp.com/
