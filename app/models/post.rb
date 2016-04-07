@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments
 
+  self.per_page = 10
   validates :title, presence: true, length: {maximum: 250}
   validates :user_id, presence: true
 

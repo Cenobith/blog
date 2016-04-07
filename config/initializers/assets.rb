@@ -12,4 +12,5 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( logo.png )
 Rails.application.config.assets.precompile += %w( logo_small.png )
 Rails.application.config.assets.precompile += %w( logo_small_white.png )
+Rails.application.config.assets.precompile += %w( background.jpg )
 

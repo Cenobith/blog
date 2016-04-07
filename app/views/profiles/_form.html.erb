@@ -1,3 +1,5 @@
+<div class="panel panel-default">
+  <div class="panel-body">
 <%= simple_form_for(@profile) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <%= f.input :nickname, label: t('nick') %>
@@ -13,3 +15,5 @@
 
     <%= f.submit t('save_changes'), class: "btn btn-large btn-primary", id: "SaveBtn" %>
 <% end %>
+</div>
+</div>

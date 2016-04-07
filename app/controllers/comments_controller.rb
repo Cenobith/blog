@@ -17,12 +17,16 @@ class CommentsController < ApplicationController
       @comment.nickname = nickname_for(current_user)
       @comment.email = current_user.email
     end
-    if @comment.save
-      flash[:success] = "Comment created"
-      Notifier.commented(@comment).deliver
-      redirect_to post_path(@comment.post_id)
-    else
-      render 'static_pages/home'
+    begin
+      if @comment.save
+        flash[:success] = "Comment created"
+        Notifier.commented(@comment).deliver
+        redirect_to post_path(@comment.post_id)
+      else
+        render 'new'
+      end
+    rescue StandardError => e
+      flash[:notice] = e.message
     end
   end
 
