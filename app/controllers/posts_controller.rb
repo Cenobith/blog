@@ -15,14 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @posts = current_user.posts.order("published_at DESC").paginate(page: params[:page])
-    @post = current_user.posts.build(post_params)
-    if @post.save
-      flash[:success] = "Post created"
-      redirect_to root_path
-    else
-      render 'static_pages/home'
-    end
+    post_create("create")
   end
 
   def new
@@ -33,6 +26,10 @@ class PostsController < ApplicationController
   end
 
   def edit
+  end
+
+  def publish
+    post_create("publish")
   end
 
   def destroy
@@ -77,5 +74,22 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content, :published, :title_image, :tag_list, :published_at)
+  end
+
+  def post_create(mode)
+    @posts = current_user.posts.order("published_at DESC").paginate(page: params[:page])
+    @post = current_user.posts.build(post_params)
+    @post.published = true if mode == "publish"
+    if @post.save
+      if mode == "publish"
+        flash[:success] = "Post published"
+      else
+        flash[:success] = "Post created"
+      end
+
+      redirect_to root_path
+    else
+      render 'static_pages/home'
+    end
   end
 end

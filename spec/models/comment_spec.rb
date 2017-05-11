@@ -7,11 +7,14 @@ RSpec.describe Comment, type: :model do
                                     content: "Some text. "*100)
            @post.save
            @comment = @post.comments.build(nickname: "Jose",
-                                  content: "This is comment")}
+                                  content: "This is a comment",
+                                  email: "jose@test.com")
+         }
   subject { @comment }
 
   it { should respond_to(:nickname) }
   it { should respond_to(:content) }
+  it { should respond_to(:email) }
 
   it { should be_valid }
 
@@ -27,6 +30,16 @@ RSpec.describe Comment, type: :model do
 
   describe "when nickname is not present" do
     before { @comment.nickname = nil }
+    it { should_not be_valid }
+  end
+
+  describe "when email is not present" do
+    before { @comment.email = nil }
+    it { should_not be_valid }
+  end
+
+  describe "when email is not valid" do
+    before { @comment.email = "feferferf"}
     it { should_not be_valid }
   end
 

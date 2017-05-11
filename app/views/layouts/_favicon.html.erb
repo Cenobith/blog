@@ -1,0 +1,8 @@
+<% %w(76 120 152 180).each do |size| %>
+    <%= favicon_link_tag "logo.png", rel: 'apple-touch-icon', type: 'image/png', sizes: "#{size}x#{size}" %>
+<% end %>
+
+<% %w(16 32).each do |size| %>
+    <%= favicon_link_tag "logo_small.png", rel: 'icon', type: 'image/png', sizes: "#{size}x#{size}" %>
+<% end %>
+<!-- link rel="shortcut icon" href="http://swiftbook.ru/favicon.ico" type="image/vnd.microsoft.icon" / -->

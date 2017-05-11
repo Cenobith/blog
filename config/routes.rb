@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   get 'posts/new'
   post 'posts/new'
+  post 'posts/publish'
 
   get 'static_pages/home'
   # The priority is based upon order of creation: first created -> highest priority.
