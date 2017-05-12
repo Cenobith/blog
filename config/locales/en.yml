@@ -53,6 +53,7 @@ en:
   profile: "Profile"
   image: "Image"
   admin_panel: "Admin"
+  login: "Log in"
   activerecord:
     errors:
       messages:

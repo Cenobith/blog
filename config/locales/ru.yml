@@ -33,6 +33,7 @@ ru:
   profile: "Профайл"
   image: "Картинка"
   admin_panel: "Администрирование"
+  login: "Войти"
   activerecord:
     errors:
       models:

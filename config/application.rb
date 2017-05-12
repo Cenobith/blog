@@ -25,5 +25,6 @@ module Blog
 
     # Application title, change it
     config.title = 'MyDevNotes'
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end
