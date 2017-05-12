@@ -3,7 +3,7 @@ Increment Blog
 
 ## Overview
 
-This is platform for my own Blog
+This is a platform for my own Blog
 
 Based on Cenobith Starter Kit (https://github.com/Cenobith/starterkit)
 Deployed as my blog - http://amikhaylin.herokuapp.com/
@@ -15,7 +15,8 @@ Features:
 
 ## Database creation
 
-Change database name in database.yml and run: rake db:create db.migrate
+* Change an email and a password in db/seeds.rb
+* Change database name in database.yml and run: rake db:create db.migrate db:seed
 
 ## Configuration
 
