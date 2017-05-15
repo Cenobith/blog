@@ -69,4 +69,5 @@ end
 group :production do
   gem 'aws-sdk', '~> 2.3.0'
   gem 'rails_stdout_logging'
+  gem 'rails_12factor'
 end
