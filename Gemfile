@@ -67,6 +67,6 @@ group :development do
 end
 
 group :production do
-  gem 'aws-sdk', '~> 2.0'
+  gem 'aws-sdk', '~> 2.3.0'
   gem 'rails_stdout_logging'
 end
