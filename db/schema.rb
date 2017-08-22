@@ -66,10 +66,10 @@ ActiveRecord::Schema.define(version: 20160404170742) do
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
-    t.string   "taggable_type"
     t.integer  "taggable_id"
-    t.string   "tagger_type"
+    t.string   "taggable_type"
     t.integer  "tagger_id"
+    t.string   "tagger_type"
     t.string   "context",       limit: 128
     t.datetime "created_at"
     t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
