@@ -222,7 +222,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
-    pg (1.0.0)
+    pg (0.21.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -375,7 +375,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   paperclip
-  pg
+  pg (~> 0.20)
   puma
   rails (= 5.0.0.1)
   rails_12factor
